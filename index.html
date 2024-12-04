@@ -3,15 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
     <link rel="stylesheet" href="./css/jquery.cleditor.css">
+    <link rel="stylesheet" href="./css/style.css">
 </head>
 <body>
     <textarea name="input" id="input"></textarea>
-   <div>
-        <button onClick="saveAsTxt()" id="saveTxt">Save as TXT</button>
-        <button onClick="saveAsHtml()" id="saveHtml">Save as HTML</button>
-        <button onClick="saveAsJson()" id="saveJson">Save as JSON</button>
+   <div class="flex gap-1 items-center">
+        <button onClick="saveAsTxt()" id="saveTxt" class="button-64" role="button"><span class="text">Save as TXT</span></button>
+        <button onClick="saveAsHtml()" id="saveHtml" class="button-64" role="button"><span class="text">Save as HTML</span></button>
+        <button onClick="saveAsJson()" id="saveJson" class="button-64" role="button"><span class="text">Save as JSON</span></button>
     </div>
     <script src="./js/jquery-3.7.1.min.js"></script>
     <script src="./js/jquery.cleditor.min.js"></script>
