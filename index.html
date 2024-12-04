@@ -3,13 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Simple Ms Word</title>
+    
     <link rel="stylesheet" href="./css/jquery.cleditor.css">
 </head>
 <body>
     <textarea name="input" id="input"></textarea>
+   <div>
+        <button onClick="saveAsTxt()" id="saveTxt">Save as TXT</button>
+        <button onClick="saveAsHtml()" id="saveHtml">Save as HTML</button>
+        <button onClick="saveAsJson()" id="saveJson">Save as JSON</button>
+    </div>
     <script src="./js/jquery-3.7.1.min.js"></script>
     <script src="./js/jquery.cleditor.min.js"></script>
+    <script src="./js/script.js"></script>
     <script>
       $(document).ready(function() {
           $("#input").cleditor({
@@ -46,6 +52,17 @@
                   "margin:4px; font:10pt Arial,Verdana; cursor:text"
           });
       });
+      
+      // Global function to save files
+      function saveFile(content, fileName, fileType) {
+          const blob = new Blob([content], { type: fileType });
+          const link = document.createElement('a');
+          link.href = URL.createObjectURL(blob);
+          link.download = fileName;
+          link.click();
+          URL.revokeObjectURL(link.href);
+      }
     </script>
+   
 </body>
 </html>
